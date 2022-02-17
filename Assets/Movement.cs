@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    // Initializ animator
     public Animator animator;
+
+    // Initalize horizontalMove variable to 0
     float horizontalMove = 0;
+    
+    // Initialize runSpeed variable to 4
     public float runSpeed = 4f;
 
     // Create header Component
     [Header("Component")]
+    
     // Initialize Rigidbody2D
     public Rigidbody2D Rb;
 
@@ -69,7 +75,7 @@ public class Movement : MonoBehaviour
             Rb.AddForce(Vector2.up * 4, ForceMode2D.Impulse);
 
         }
-
+        // Player's animation movement
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
 
         if (onGround)
